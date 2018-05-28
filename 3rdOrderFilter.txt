@@ -1,0 +1,81 @@
+;NOTE: 
+;	ALL LINES MUST BEGIN WITH EITHER A SEMI-COLON, A DECIMAL DIGIT, A WHITESPACE OR <NEWLINE>.
+;	ALL NUMERICAL ENTRIES MUST BE FOLLOWED IMMEDIATELY BY A <NEWLINE>.
+ CHARACTER.
+
+;Pr 	 	single real pole, radians. Although it is negative, enter its (positive) magnitude.
+6283.185307
+
+;Pp  	 	product in radians^2 of the two remaining poles, p1 and p2. Equal to omega squared when polse are complex. 
+;				These poles have negative real portions and are both either real or part of a complex conjugate pair.
+39478418.
+
+;Q	 	the Q of the remaining pole pair. Note that Q = sqrt(p1*p2)/(p1+p2), whether the poles are real or complex.
+10
+
+;Eval_f 	the frequency in radians at which the steady state filter response sensitivity is evaluated.
+;				This is expressed as a real, positive number. Typically, it is equal to sqrt[Pp].
+6283.185307180
+
+;R_Tol	 	the resistor tolerance in percent.
+.1
+
+;Delta  	When calculating filter response sensitivities, derivatives are replaced with differences.
+;	 	 		Each difference consists in part of the response evaluated at a component value minus
+;	 	 	 	the response evaluated at that parameter times Delta.  	   	   	   	 	 
+1.0001
+
+;R_min		the smallest value resistance that the program will consider for r1, r2 and r3.
+;				Select a value from the preferred E-series (see R_series below).
+100
+
+;R_max		the smallest value resistance that the program will consider for r1, r2 and r3.
+;				Select a value from the preferred E-series (see R_series below).
+100000	     
+
+;R_series	In 1952 the IEC (International Electrotechnical Commission) decided to define the resistance
+;				and tolerance values into a norm, to ease the mass manufacturing of resistors. 
+;				These are referred to as preferred values or E-series, and they are published in standard 
+;				IEC 60063:1963. The standard values also apply to capacitors. An example is E-12. 
+;				Here, component values are separated approximately by a factor of 10^(1/12). 
+;				Common series are E-6, E-12, E-24, E-48, E-96 and E-192. Higher number series have better
+;				component tolerances and offer better resolution in finding the best overall component 
+;				value solutions. These allow the program to find filter solutions with lower
+;				sensitivities and which more accurately represent the specified poles. 
+;				Enter the numerical portion only of the E series perferred for resistors:
+192
+
+;C3			The value of C3 will be held constant by the program. c1 and c2 will be varied.
+1e-9
+
+;C_min		the smallest value capacitance that the program will consider for c1 and c2. For example, 1e-9.
+;				Select a value from the preferred E-series (see R_series above).
+1e-9
+
+;C_max		the largest value capacitance that the program will consider for c1 and c2. For example, 1e-8.
+;				Select a value from the preferred E-series (see R_series above).
+2.7e-9
+
+;C_series	E series for capacitors (see R-series above.)
+12
+      
+;Rg			the value the program will use for rg. Since only the ratio rf/rg (not the value of rg) matters
+;				to filter sensitivities, the program will vary only rf and keep rg fixed.
+;				Select a value from the preferred E-series (see R_series above).
+1000
+
+;Rf_min	 	the smallest non-zero value resistance that the program will consider for rf. 
+;				(It will consider a value of zero.) It is suggested that this be no more than Rg/100.
+;				 Select a value from the preferred E-series (see R_series above).
+10
+
+;Rf_max	 	the largest value resistance that the program will consider for rf. 
+;				It is recommended that this be rg, which should offer an equal value capacitor solution.
+;				Such solutions have relatively poor sensitivities in 2nd order filter designs,
+;				as do solutions with even larger ratios of rf/rg. The same is generally true in 3rd oder filers.
+;				Select a value from the preferred E-series (see R_series above).
+10000
+
+;C_Tol	 	the capacitor tolerance in percent.
+2.5
+
